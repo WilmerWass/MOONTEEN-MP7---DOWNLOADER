@@ -106,7 +106,7 @@ Antes de liberar el poder del MP7, asegúrate de tener las dependencias listas:
 
 100.0% a 9.23MiB/s ETA 00:00
 
-&#x20;  -> Guardado en: ...\\Descargas\\Beto Zabaleta
+&#x20;  -> Guardado en: ...\\Descargas\\ARTISTA
 
 ==========================================================
 
