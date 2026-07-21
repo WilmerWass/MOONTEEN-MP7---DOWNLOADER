@@ -1,112 +1,31 @@
-\# 🌌 MOONTEEN MP7 - DOWNLOADER
+# 🎵 WASSLink MPDL — Media Player Downloader
 
+> **WASSLink MPDL** es una herramienta de consola (CLI) totalmente **portable, modular y ligera** diseñada para descargar audio y video en alta calidad desde múltiples plataformas (YouTube, TikTok, Instagram y más) sin necesidad de instalación ni dependencias externas en el sistema.
 
+---
 
-> \*\*Concepto:\*\* Nacido un lunes 13. Compacto, táctico y ultra rápido como un MP7. 
+## ✨ Características Principales
 
-> Un script de PowerShell automatizado y minimalista para descargas de audio, impulsado por `yt-dlp`.
+* 🚀 **100% Portable:** No requiere instalación de Python, Node.js ni componentes administrativos. Corre directamente desde cualquier unidad USB o carpeta.
+* 📂 **Organización Automática Inteligente:** Clasifica las descargas por Red Social y Creador/Artista:
+  `Descargas / [Red Social] / [Creador_o_Artista] / [Título].ext`
+* 🎨 **Inyección Automática de Metadatos y Carátulas:** Convierte a MP3 (320 kbps) e inyecta la portada (thumbnail), artista, título y etiquetas ID3 de forma nativa.
+* 🛡️ **Historiales Separados:** Mantiene registros de descargas independientes para audio (`historial_audio.txt`) y video (`historial_video.txt`), permitiendo obtener el MP3 y el MP4 del mismo enlace sin bloqueos.
+* ⚡ **Control de Rendimiento Multihilo:** Configuración dinámica de hilos (1 a 5+) para adaptar la velocidad según tu conexión.
+* 🔄 **Actualizador del Motor con 1-Clic:** Opción integrada para actualizar `yt-dlp.exe` en tiempo real y prevenir fallos por cambios en las APIs de las plataformas.
 
+---
 
-
-`MOONTEEN MP7` es una herramienta de alto rendimiento diseñada para procesar, rastrear y descargar audio de alta calidad desde listas de reproducción y videos de YouTube, eliminando por completo el desorden visual clásico de la consola.
-
-
-
-\---
-
-
-
-\## ⚡ Características Principales
-
-
-
-\*   🎯 \*\*Interfaz Limpia (Zero-Clutter):\*\* Remueve los registros basura y el ruido innecesario de la terminal.
-
-\*   🔄 \*\*Progreso Dinámico en una Sola Línea:\*\* Reescribe la barra de descarga en tiempo real en una única línea (`0% -> 100%`) para no llenar la pantalla hacia abajo.
-
-\*   📂 \*\*Auto-Organización Inteligente:\*\* Lee los metadatos y organiza de forma automática tus archivos en carpetas por `Artista/Canal`.
-
-\*   🛡️ \*\*Freno Anti-Duplicados:\*\* Revisa el historial al instante para saltarse canciones repetidas mostrando un elegante aviso de `\[YA TIENES]`.
-
-\*   💾 \*\*Control de Almacenamiento:\*\* Monitorea el espacio en disco de forma constante y pausa el proceso si tu almacenamiento baja del límite de seguridad establecido.
-
-
-
-\---
-
-
-
-\## 🛠️ Requisitos
-
-
-
-Antes de liberar el poder del MP7, asegúrate de tener las dependencias listas:
-
-
-
-1\.  \*\*Python 3.x\*\*
-
-2\.  \*\*yt-dlp\*\* (Instálalo desde la consola con: `python -m pip install yt-dlp`)
-
-3\.  \*\*FFmpeg\*\* (Necesario para la conversión perfecta a formato MP3)
-
-
-
-\---
-
-
-
-\## 🚀 Inicio Rápido
-
-
-
-1\.  Clona este repositorio o descarga el archivo `descargar\_musica.ps1`.
-
-2\.  Crea un archivo llamado `playlists.txt` en la misma carpeta y pega tus enlaces de YouTube (uno por línea).
-
-3\.  Ejecuta el script en PowerShell:
-
-&#x20;   ```powershell
-
-&#x20;   ./descargar\_musica.ps1
-
-&#x20;   ```
-
-
-
-\---
-
-
-
-\## 🎨 Vista Previa de la Interfaz
-
-
+## 🛠️ Estructura del Proyecto
 
 ```text
-
-==========================================================
-
-&#x20;        GESTOR DE DESCARGAS MINIMALISTA (MUNDO)          
-
-==========================================================
-
-&#x20;DESTINO: C:\\Users\\...\\Music\\MUNDO\\Descargas
-
-&#x20;DISCO (C:): 45.2 GB libres (24.1%)
-
-==========================================================
-
-
-
-\-------------------------------------------------------
-
-\[DESCARGANDO] ARTISTA CANTANTE - TITULO DE LA CANCION (Letra)
-
-\-------------------------------------------------------
-
-100.0% a 9.23MiB/s ETA 00:00
-
-&#x20;  -> Guardado en: ...\\Descargas\\ARTISTA
-
-==========================================================
-
+WASSLink-MPDL/
+├── engine/
+│   ├── yt-dlp.exe            # Motor principal de extracción
+│   └── ffmpeg.exe            # Procesador/convertidor de medios
+├── scripts/
+│   └── main.ps1              # Lógica principal del sistema en PowerShell
+├── downloads/                # Carpeta predeterminada de salida
+├── config_wasslink.json      # Configuración del usuario (Se auto-genera)
+├── playlists.txt             # Lista para procesamiento de enlaces en lote
+└── WASSLink_MPDL.bat         # Lanzador ejecutable principal
